@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KyuuRzy - API Documentation</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <div class="bg-animation"></div>
+    <div class="floating-shapes">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+
+    <div class="header-container" id="header">
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon">K</div>
+                <div>
+                    <div class="header-title">KyuuRzy API</div>
+                    <div class="header-subtitle">Professional REST API Platform</div>
+                </div>
+            </div>
+            <nav class="nav-links">
+                <a href="#info" class="nav-link">System</a>
+                <a href="#endpoints" class="nav-link">Endpoints</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+        </div>
+    </div>
+
+    <div class="container">
+        <section class="hero-section">
+            <h1 class="hero-title">KyuuRzy API</h1>
+            <p class="hero-subtitle">REST API Platform</p>
+            <p class="hero-description">
+                peler
+            </p>
+            <div class="hero-buttons">
+                <a href="#endpoints" class="hero-btn primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+                        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+                    </svg>
+                    Explore API
+                </a>
+                <a href="#contact" class="hero-btn secondary">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    Get Support
+                </a>
+            </div>
+        </section>
+
+        <section id="info" class="section">
+            <h2 class="section-title">System Information</h2>
+            <div class="info-grid">
+                <div class="info-card animate-card" style="animation-delay: 0.1s">
+                    <div class="info-card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="1" y="6" width="18" height="12" rx="2" ry="2"></rect>
+                            <line x1="23" y1="13" x2="23" y2="11"></line>
+                        </svg>
+                    </div>
+                    <div class="info-card-title">Battery Status</div>
+                    <div class="info-card-value" id="battery"><div class="loading"></div></div>
+                    <div class="status-indicator status-online">
+                        System Online
+                    </div>
+                </div>
+
+                <div class="info-card animate-card" style="animation-delay: 0.2s">
+                    <div class="info-card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                    </div>
+                    <div class="info-card-title">Current Time</div>
+                    <div class="info-card-value" id="time"><div class="loading"></div></div>
+                    <div class="status-indicator status-online">
+                        Live Updates
+                    </div>
+                </div>
+
+                <div class="info-card animate-card" style="animation-delay: 0.3s">
+                    <div class="info-card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 11l3 3L22 4"></path>
+                            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                        </svg>
+                    </div>
+                    <div class="info-card-title">IP Address</div>
+                    <div class="info-card-value" id="ip"><div class="loading"></div></div>
+                    <div class="status-indicator status-online">
+                        Connected
+                    </div>
+                </div>
+
+                <div class="info-card animate-card" style="animation-delay: 0.4s">
+                    <div class="info-card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                    </div>
+                    <div class="info-card-title">Location</div>
+                    <div class="info-card-value" id="region"><div class="loading"></div></div>
+                    <div class="status-indicator status-online">
+                        Geo-Located
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="endpoints" class="section">
+            <h2 class="section-title">API Endpoints</h2>
+            <div class="endpoints-container">
+                <div class="endpoint animate-card" style="animation-delay: 0.1s">
+                    <div class="endpoint-header">
+                        <div class="endpoint-info">
+                            <span class="method">GET</span>
+                            <span class="endpoint-path">/api/forcecall</span>
+                        </div>
+                        <div class="endpoint-actions">
+                            <button class="action-btn" onclick="goToEndpoint('/api/bug/forcecall?target=')" title="Open endpoint">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                                Launch
+                            </button>
+                            <button class="action-btn" onclick="copyEndpoint('/api/bug/forcecall?target=')" title="Copy endpoint">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                </svg>
+                                Copy
+                            </button>
+                        </div>
+                    </div>
+                    <div class="endpoint-body">
+                        <p class="endpoint-description">
+                            🚀 <strong>Penis</strong> - ah ah ah
+                        </p>
+                    </div>
+                </div>
+
+                <div class="endpoint animate-card" style="animation-delay: 0.2s">
+                    <div class="endpoint-header">
+                        <div class="endpoint-info">
+                            <span class="method">GET</span>
+                            <span class="endpoint-path">/api/carousels</span>
+                        </div>
+                        <div class="endpoint-actions">
+                            <button class="action-btn" onclick="goToEndpoint('/api/bug/carousels?target=&fjids=')" title="Open endpoint">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                                Launch
+                            </button>
+                            <button class="action-btn" onclick="copyEndpoint('/api/bug/carousels?target=&fjids=')" title="Copy endpoint">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                </svg>
+                                Copy
+                            </button>
+                        </div>
+                    </div>
+                    <div class="endpoint-body">
+                        <p class="endpoint-description">
+                            🎠 <strong>yukina kresh</strong> - 🤓.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section section">
+            <h2 class="contact-title">Connect With Us</h2>
+            <div class="contact-links">
+                <a href="https://t.me/kyuucode" class="contact-link" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21.198 2.433a2.242 2.242 0 0 0-1.022.215l-8.609 3.33c-2.068.8-4.133 1.598-5.724 2.21a405.15 405.15 0 0 1-2.849 1.09c-.42.147-.99.332-1.473.901-.728.968.193 1.798.919 2.286 1.61.516 3.275 1.009 4.654 1.472.846 1.467 1.618 2.92 2.286 4.347.613.853 1.8 1.638 2.876 1.23.544-.207.979-.78 1.316-1.488.364-.852.594-1.97.77-3.016.334-1.944.608-4.003.825-5.695.217-1.696.402-3.168.497-4.337.062-.775-.032-1.634-.444-2.057-.328-.339-.738-.472-1.022-.511z" />
+                    </svg>
+                    Telegram
+                </a>
+                <a href="https://github.com/kiuur" class="contact-link" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                    </svg>
+                    GitHub
+                </a>
+                <a href="https://wa.me/6281351692548" class="contact-link" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                    </svg>
+                    WhatsApp
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>© 2025 KyuuRzy API - Professional REST API Documentation Platform</p>
+            <p class="creator">Designed & Developed with ❤️ by KyuuRzy</p>
+        </div>
+    </footer>
+
+    <div class="toast" id="toast">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+        </svg>
+        <span id="toastMessage">Successfully copied to clipboard! 🎉</span>
+    </div>
+
+    <script>
+        // Header scroll effect
+        const header = document.getElementById('header');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Battery information
+        const batteryElement = document.getElementById('battery');
+        
+        if ('getBattery' in navigator) {
+            navigator.getBattery().then(battery => {
+                updateBatteryInfo(battery);
+                
+                battery.addEventListener('levelchange', () => updateBatteryInfo(battery));
+                battery.addEventListener('chargingchange', () => updateBatteryInfo(battery));
+            });
+        } else {
+            batteryElement.innerHTML = '<span style="color: var(--text-secondary)">Not Available</span>';
+        }
+        
+        function updateBatteryInfo(battery) {
+            const level = Math.floor(battery.level * 100);
+            const charging = battery.charging ? '⚡ Charging' : '🔋 Battery';
+            batteryElement.innerHTML = `${level}% ${charging}`;
+        }
+        
+        // Current time
+        const timeElement = document.getElementById('time');
+        
+        function updateTime() {
+            const now = new Date();
+            const options = { 
+                weekday: 'short', 
+                year: 'numeric', 
+                month: 'short', 
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: true
+            };
+            timeElement.textContent = now.toLocaleDateString('en-US', options);
+        }
+        
+        updateTime();
+        setInterval(updateTime, 1000);
+        
+        // IP and region information
+        const ipElement = document.getElementById('ip');
+        const regionElement = document.getElementById('region');
+        
+        fetch('https://ipapi.co/json/')
+            .then(response => response.json())
+            .then(data => {
+                ipElement.textContent = data.ip;
+                regionElement.textContent = `${data.city}, ${data.country_name}`;
+            })
+            .catch(error => {
+                ipElement.innerHTML = '<span style="color: var(--text-secondary)">Unable to fetch</span>';
+                regionElement.innerHTML = '<span style="color: var(--text-secondary)">Unable to fetch</span>';
+            });
+        
+        // Copy endpoint function
+        function copyEndpoint(path) {
+            const fullUrl = window.location.origin + path;
+            navigator.clipboard.writeText(fullUrl)
+                .then(() => {
+                    showToast('🎉 Endpoint URL copied successfully!');
+                })
+                .catch(err => {
+                    showToast('❌ Failed to copy endpoint URL');
+                });
+        }
+        
+        // Go to endpoint function
+        function goToEndpoint(path) {
+            window.open(window.location.origin + path, '_blank');
+        }
+        
+        // Enhanced Toast notification with complete hiding
+        const toast = document.getElementById('toast');
+        const toastMessage = document.getElementById('toastMessage');
+        let toastTimeout;
+        
+        function showToast(message) {
+            // Clear any existing timeout
+            clearTimeout(toastTimeout);
+            
+            // Set message and show
+            toastMessage.textContent = message;
+            toast.classList.add('show');
+            
+            // Hide after delay with complete removal
+            toastTimeout = setTimeout(() => {
+                toast.classList.remove('show');
+                
+                // Additional timeout to ensure complete hiding
+                setTimeout(() => {
+                    toast.style.display = 'none';
+                    setTimeout(() => {
+                        toast.style.display = 'flex';
+                    }, 100);
+                }, 500);
+            }, 3000);
+        }
+        
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all sections and cards
+        document.querySelectorAll('.section, .animate-card').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Enhanced hover effects
+        document.querySelectorAll('.info-card, .endpoint').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Add parallax effect to floating shapes
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const shapes = document.querySelectorAll('.shape');
+            
+            shapes.forEach((shape, index) => {
+                const speed = 0.5 + (index * 0.1);
+                shape.style.transform = `translateY(${scrolled * speed}px) rotate(${scrolled * 0.1}deg)`;
+            });
+        });
+
+        // Welcome message with proper hiding
+        setTimeout(() => {
+            showToast('🚀 Welcome to KyuuRzy API Documentation!');
+        }, 2000);
+    </script>
+</body>
+</html>
