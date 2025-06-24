@@ -1,7 +1,7 @@
 {
-    "name": "laurine-wabot",
+    "name": "feler",
     "version": "1.0.0",
-    "description": "gatau ah, males",
+    "description": "gatau",
     "main": "index.js",
     "type": "commonjs",
     "scripts": {
